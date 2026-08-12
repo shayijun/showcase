@@ -19,6 +19,7 @@ FROM deps AS builder
 WORKDIR /app
 
 COPY . .
+RUN pnpm rebuild @tailwindcss/oxide esbuild sharp unrs-resolver workerd
 RUN pnpm exec fumadocs-mdx
 RUN pnpm build
 
