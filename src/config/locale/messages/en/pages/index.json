@@ -1,10 +1,11 @@
 {
   "page": {
+    "title": "CiteTrace AI citation auditor",
+    "description": "A lightweight Vibe Coding MVP that helps students find suspicious or incomplete paper citations before submission.",
     "show_sections": [
       "hero",
-      "logos",
+      "audit",
       "introduce",
-      "benefits",
       "usage",
       "features",
       "stats",
@@ -15,408 +16,311 @@
     "sections": {
       "hero": {
         "id": "hero",
-        "title": "Ship AI Startups in hours, not days",
-        "highlight_text": "in hours",
-        "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups.<br/>Ship Fast with a variety of templates and components.",
+        "title": "CiteTrace checks every citation before submission",
+        "highlight_text": "CiteTrace",
+        "description": "Upload or paste a paper draft, extract its bibliography, and get a first-pass diagnosis for fake, missing, or weak source trails.<br/>Built for students who need confidence before the final hand-in.",
         "announcement": {
-          "badge": "New",
-          "title": "🎉 ShipAny Template Two",
-          "url": "/pricing"
+          "title": "Academic writing pain point, shipped as a focused AI product",
+          "url": "#audit-demo"
         },
-        "tip": "🎁 Special offer for the first 1000 users",
+        "tip": "MVP scope: landing page, upload/paste interaction, local citation-risk diagnosis.",
         "buttons": [
           {
-            "title": "Get Started",
-            "icon": "Zap",
-            "url": "/pricing",
+            "title": "Try the audit",
+            "icon": "SearchCheck",
+            "url": "#audit-demo",
             "target": "_self",
             "variant": "default"
           },
           {
-            "title": "Read Document",
-            "icon": "BookOpenText",
-            "url": "/docs",
-            "target": "_blank",
+            "title": "See workflow",
+            "icon": "GitBranch",
+            "url": "#workflow",
+            "target": "_self",
             "variant": "outline"
           }
         ],
-        "show_avatars": true,
-        "avatars_tip": "999+ users are using ShipAny",
+        "show_avatars": false,
         "show_award": false,
-        "image": {
-          "src": "/imgs/features/admin.png",
-          "alt": "hero",
-          "width": 1200,
-          "height": 800
-        },
-        "image_invert": {
-          "src": "/imgs/features/admin-dark.png",
-          "alt": "hero",
-          "width": 1200,
-          "height": 800
-        },
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
-          "alt": "hero"
+          "alt": "Quiet study desk"
         }
       },
-      "logos": {
-        "id": "logos",
-        "title": "ShipAny is built on the shoulders of giants",
+      "audit": {
+        "block": "citation-audit",
+        "id": "audit-demo",
+        "label": "Interactive MVP",
+        "title": "Paste a manuscript and watch the reference trail light up",
+        "description": "This first version does not need API keys. It parses the References section, checks for DOI or URL evidence, publication dates, venue signals, and page or volume details, then turns that into a clear report.",
+        "input_label": "Manuscript text",
+        "input_help": "Paste your draft or upload a .txt/.md file.",
+        "input_placeholder": "Paste your paper draft here, including the References section...",
+        "upload_button": "Upload",
+        "uploading_label": "Reading",
+        "sample_button": "Load sample",
+        "analyze_button": "Analyze references",
+        "clear_button": "Clear",
+        "empty_state": "Paste a manuscript first.",
+        "file_error": "Could not read this file. Please upload plain text or paste the paper.",
+        "summary_title": "Diagnostic report",
+        "summary_description": "A first-pass signal before manual review.",
+        "score_label": "Trust score",
+        "references_label": "References found",
+        "risk_label": "Risk flags",
+        "findings_label": "Citation findings",
+        "report_empty": "Run an audit to see citation-level findings.",
+        "checklist_title": "What this MVP checks",
+        "status_labels": {
+          "trusted": "Source trail complete",
+          "review": "Needs review",
+          "risky": "High risk"
+        },
         "items": [
           {
-            "title": "Next.js",
-            "image": {
-              "src": "/imgs/logos/nextjs.svg",
-              "alt": "Next.js"
-            }
+            "label": "Pain",
+            "value": "Fake refs",
+            "description": "Students discover citation problems too late."
           },
           {
-            "title": "React",
-            "image": {
-              "src": "/imgs/logos/react.svg",
-              "alt": "React"
-            }
+            "label": "Input",
+            "value": "Paste/upload",
+            "description": "The fastest flow for a Vibe Coding demo."
           },
           {
-            "title": "TailwindCSS",
-            "image": {
-              "src": "/imgs/logos/tailwindcss.svg",
-              "alt": "TailwindCSS"
-            }
-          },
-          {
-            "title": "Shadcn/UI",
-            "image": {
-              "src": "/imgs/logos/shadcn.svg",
-              "alt": "Shadcn/UI"
-            }
-          },
-          {
-            "title": "Vercel",
-            "image": {
-              "src": "/imgs/logos/vercel.svg",
-              "alt": "Vercel"
-            }
+            "label": "Output",
+            "value": "Diagnosis",
+            "description": "A ranked list of references to verify first."
           }
-        ]
+        ],
+        "checklist": [
+          "Extract the bibliography from References or Bibliography sections",
+          "Flag citations without DOI, URL, or source trail evidence",
+          "Spot unknown publication dates and weak venue signals",
+          "Summarize risky, review-needed, and trusted references"
+        ],
+        "sample_manuscript": "This draft discusses retrieval-augmented writing and cites Smith (2024), Wang (n.d.), and Patel (2020).\n\nReferences\n[1] Smith, J. (2024). Verified citation. Journal of AI, 12(2), 30-44. https://doi.org/10.1000/demo\n[2] Wang, L. (n.d.). AI assisted writing habits. Retrieved from example.com\n[3] Patel, R. (2020). Missing source trail for a citation."
       },
       "introduce": {
         "block": "features-list",
         "id": "introduce",
-        "title": "What is ShipAny",
-        "label": "Introduce",
-        "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups, including templates, components, and documentation.",
+        "label": "Why this exists",
+        "title": "Citation checking is a real student workflow, not a toy problem",
+        "description": "When students write papers, they often need to know whether cited sources actually look traceable. CiteTrace turns that anxiety into a focused review step before submission.",
         "image": {
           "src": "/imgs/features/landing-page.png",
-          "alt": "introduce"
+          "alt": "Citation audit workspace"
         },
         "items": [
           {
-            "title": "Ready-to-use Templates",
-            "description": "Choose from dozens of production-ready AI SaaS templates to quickly start your project.",
-            "icon": "RiNextjsFill",
+            "title": "Starts from a real pain point",
+            "description": "The product is built around a clear daily workflow: upload a paper, inspect the bibliography, and fix suspicious citations.",
+            "icon": "FileWarning",
             "image": {
               "src": "/imgs/features/1.png",
-              "alt": "introduce"
+              "alt": "Paper review"
             }
           },
           {
-            "title": "Infrastructure Setup",
-            "description": "Get instant access to scalable infrastructure with best practices built-in.",
-            "icon": "RiDatabase2Line",
+            "title": "Works before complex integrations",
+            "description": "The MVP creates value with parsing and heuristics first. LLM and web search verification can be plugged in later.",
+            "icon": "Layers",
             "image": {
               "src": "/imgs/features/2.png",
-              "alt": "introduce"
+              "alt": "MVP layers"
             }
           },
           {
-            "title": "Quick Deployment",
-            "description": "Deploy your AI SaaS application to production in hours, not days.",
-            "icon": "RiCloudyFill",
+            "title": "Shows product judgment",
+            "description": "It is not just a chat box. The interface turns messy references into scores, statuses, and next actions.",
+            "icon": "Gauge",
             "image": {
               "src": "/imgs/features/3.png",
-              "alt": "introduce"
-            }
-          },
-          {
-            "title": "AI Integration",
-            "description": "Integrate AI into your project with ease using our built-in AI SDK.",
-            "icon": "RiRobot2Line",
-            "image": {
-              "src": "/imgs/features/4.png",
-              "alt": "introduce"
+              "alt": "Diagnosis"
             }
           }
         ],
         "className": "bg-muted"
       },
-      "benefits": {
-        "block": "features-accordion",
-        "id": "benefits",
-        "title": "Why Choose ShipAny",
-        "label": "Benefits",
-        "description": "Get everything you need to launch your AI startup - from ready-to-use templates to technical support.",
-        "items": [
-          {
-            "title": "Complete Framework",
-            "description": "Built on Next.js with authentication, payments, and AI integration - everything works out of the box.",
-            "icon": "RiNextjsFill",
-            "image": {
-              "src": "/imgs/features/user-billing.png",
-              "alt": "benefits"
-            }
-          },
-          {
-            "title": "Rich Templates Library",
-            "description": "Choose from various AI SaaS templates to kickstart your project - chatbots, image generation, and more.",
-            "icon": "RiClapperboardAiLine",
-            "image": {
-              "src": "/imgs/features/admin-settings.png",
-              "alt": "benefits"
-            }
-          },
-          {
-            "title": "Technical Guidance",
-            "description": "Get dedicated support and join our developer community to ensure your successful launch.",
-            "icon": "RiCodeFill",
-            "image": {
-              "src": "/imgs/features/landing-page.png",
-              "alt": "benefits"
-            }
-          }
-        ]
-      },
       "usage": {
         "block": "features-step",
-        "id": "usage",
-        "title": "How to Launch with ShipAny",
-        "description": "Get your AI SaaS startup running in three simple steps:",
+        "id": "workflow",
+        "title": "A simple workflow students understand immediately",
+        "description": "The MVP keeps the loop short so the product value is visible in the first minute.",
         "image": {
           "src": "/imgs/features/1.png",
-          "alt": "usage"
+          "alt": "Citation audit workflow"
         },
         "image_position": "left",
         "text_align": "center",
         "items": [
           {
-            "title": "Get ShipAny",
-            "description": "Buy ShipAny with a one-time payment. Check your email for the code and documentation.",
+            "title": "Upload or paste the paper",
+            "description": "Students start with the draft they already have. No account setup is needed for the demo flow.",
             "image": {
               "src": "/imgs/features/5.png",
-              "alt": "usage"
+              "alt": "Upload"
             }
           },
           {
-            "title": "Start Your Project",
-            "description": "Read the documentation and clone the code of ShipAny. Start building your AI SaaS startup.",
+            "title": "Extract reference candidates",
+            "description": "CiteTrace reads the bibliography section and turns each entry into a reviewable item.",
             "image": {
               "src": "/imgs/features/6.png",
-              "alt": "usage"
+              "alt": "Extract"
             }
           },
           {
-            "title": "Customize Your Project",
-            "description": "Modify the template with your data and contents. Specific AI functionality needs.",
+            "title": "Diagnose source-trail quality",
+            "description": "The report highlights DOI, URL, year, venue, and page evidence so weak citations stand out.",
             "image": {
               "src": "/imgs/features/7.png",
-              "alt": "usage"
+              "alt": "Diagnose"
             }
           },
           {
-            "title": "Deploy to Production",
-            "description": "Deploy your project to production with a few steps and start serving customers immediately.",
+            "title": "Fix the riskiest references first",
+            "description": "Students get a practical checklist for what to verify before submission.",
             "image": {
               "src": "/imgs/features/8.png",
-              "alt": "usage"
+              "alt": "Fix"
             }
-          }
-        ],
-        "className": "bg-muted"
-      },
-      "features": {
-        "id": "features",
-        "title": "Key Features of ShipAny",
-        "description": "Everything you need to launch your AI SaaS startup quickly and efficiently.",
-        "items": [
-          {
-            "title": "Next.js Boilerplate",
-            "description": "Production-ready Next.js templates with SEO-friendly structure and i18n support.",
-            "icon": "RiNextjsFill"
-          },
-          {
-            "title": "Authentication & Payments",
-            "description": "Integrated Google OAuth, one-tap login, and Stripe payment processing.",
-            "icon": "RiKey2Fill"
-          },
-          {
-            "title": "Data Infrastructure",
-            "description": "Built-in Supabase integration for reliable and scalable data storage.",
-            "icon": "RiDatabase2Line"
-          },
-          {
-            "title": "One-Click Deployment",
-            "description": "Seamless deployment to Vercel or Cloudflare with automated setup.",
-            "icon": "RiCloudy2Fill"
-          },
-          {
-            "title": "Business Analytics",
-            "description": "Integrated Google Analytics and Search Console for tracking growth.",
-            "icon": "RiBarChart2Line"
-          },
-          {
-            "title": "AI-Ready Infrastructure",
-            "description": "Pre-configured AI integration with built-in credits system and API sales.",
-            "icon": "RiRobot2Line"
           }
         ]
       },
-      "stats": {
-        "id": "stats",
-        "title": "People Love ShipAny",
-        "description": "for it's easy to use and fast to ship.",
+      "features": {
+        "id": "features",
+        "title": "Built for a believable AI product manager case",
+        "description": "The project demonstrates need discovery, product scoping, and a clear AI-ready path without overbuilding the first version.",
         "items": [
           {
-            "title": "999+",
-            "description": "Customers"
+            "title": "Upload-ready interaction",
+            "description": "Users can paste or upload plain-text drafts and immediately run an audit.",
+            "icon": "UploadCloud"
           },
           {
-            "title": "200+",
-            "description": "Blocks"
+            "title": "Citation-level diagnosis",
+            "description": "Each reference gets a status and evidence chips instead of a vague paragraph.",
+            "icon": "ListChecks"
           },
           {
-            "title": "50+",
-            "description": "Templates"
+            "title": "Trust score",
+            "description": "The page turns many bibliography details into one scannable signal.",
+            "icon": "ShieldCheck"
+          },
+          {
+            "title": "LLM-ready architecture",
+            "description": "The local analyzer can later be replaced by a model prompt, retrieval API, or Crossref-style lookup.",
+            "icon": "Bot"
+          },
+          {
+            "title": "Student-first copy",
+            "description": "The landing page speaks to deadline pressure, not generic AI automation.",
+            "icon": "GraduationCap"
+          },
+          {
+            "title": "Actionable next step",
+            "description": "Risky and review-needed references become a repair queue.",
+            "icon": "ClipboardCheck"
           }
         ],
         "className": "bg-muted"
       },
-      "testimonials": {
-        "id": "testimonials",
-        "title": "What Users Say About ShipAny",
-        "description": "Hear from developers and founders who launched their AI startups with ShipAny.",
+      "stats": {
+        "id": "stats",
+        "title": "MVP signals that matter",
+        "description": "The first version optimizes for clarity, speed, and a demoable user loop.",
         "items": [
           {
-            "name": "David Chen",
-            "role": "Founder of AIWallpaper.shop",
-            "quote": "ShipAny saved us months of development time. We launched our AI wallpaper business in just 2 days and got our first paying customer within a week!",
+            "title": "1 min",
+            "description": "to understand the value"
+          },
+          {
+            "title": "0 keys",
+            "description": "needed for local demo"
+          },
+          {
+            "title": "3 states",
+            "description": "trusted, review, risky"
+          }
+        ]
+      },
+      "testimonials": {
+        "id": "testimonials",
+        "title": "Designed around realistic users",
+        "description": "The use cases map to students, tutors, and academic writing teams.",
+        "items": [
+          {
+            "name": "Maya",
+            "role": "Graduate student",
+            "quote": "I do not need a full writing assistant. I need to know which citations might embarrass me before submission.",
             "image": {
               "src": "/imgs/avatars/1.png",
-              "alt": "david"
+              "alt": "Maya"
             }
           },
           {
-            "name": "Rachel Kim",
-            "role": "CTO at HeyBeauty.ai",
-            "quote": "The pre-built AI infrastructure is a game-changer. We didn't have to worry about architecture - just focused on our AI beauty tech and went live fast.",
+            "name": "Leon",
+            "role": "Research tutor",
+            "quote": "The ranked findings make review sessions faster because we start with references that have missing source trails.",
             "image": {
               "src": "/imgs/avatars/2.png",
-              "alt": "rachel"
+              "alt": "Leon"
             }
           },
           {
-            "name": "Marcus Thompson",
-            "role": "Solo Developer",
-            "quote": "As a solo developer, ShipAny gave me everything I needed - auth, payments, AI integration, and beautiful UI. Launched my SaaS in a weekend!",
+            "name": "Ari",
+            "role": "AI product interviewer",
+            "quote": "This is the kind of scoped prototype that shows product judgment: clear user, clear pain, clear next build.",
             "image": {
               "src": "/imgs/avatars/3.png",
-              "alt": "marcus"
-            }
-          },
-          {
-            "name": "Sofia Garcia",
-            "role": "CEO of Melodisco",
-            "quote": "The templates are production-ready and highly customizable. We built our AI music platform in hours instead of months. Incredible time-to-market!",
-            "image": {
-              "src": "/imgs/avatars/4.png",
-              "alt": "sofia"
-            }
-          },
-          {
-            "name": "James Wilson",
-            "role": "Tech Lead at GPTs.works",
-            "quote": "ShipAny's infrastructure is rock-solid. We scaled from 0 to 10k users without touching the backend. Best investment for our AI startup.",
-            "image": {
-              "src": "/imgs/avatars/5.png",
-              "alt": "james"
-            }
-          },
-          {
-            "name": "Anna Zhang",
-            "role": "Startup Founder",
-            "quote": "From idea to launch in 3 days! ShipAny's templates and deployment tools made it possible to test our AI business concept incredibly fast.",
-            "image": {
-              "src": "/imgs/avatars/6.png",
-              "alt": "anna"
+              "alt": "Ari"
             }
           }
         ]
       },
       "faq": {
         "id": "faq",
-        "title": "Frequently Asked Questions About ShipAny",
-        "description": "Have another question? Contact us on Discord or by email.",
+        "title": "Questions about the first version",
+        "description": "The MVP is intentionally narrow so it can be shipped and evaluated quickly.",
         "items": [
           {
-            "question": "What exactly is ShipAny and how does it work?",
-            "answer": "ShipAny is a comprehensive NextJS boilerplate designed specifically for building AI SaaS startups. It provides ready-to-use templates, infrastructure setup, and deployment tools that help you launch your AI business in hours instead of days."
+            "question": "Does this prove whether a paper source is real?",
+            "answer": "Not yet. This MVP performs a first-pass source-trail audit. It flags weak references and gives students a repair queue. A later version can call LLM, Crossref, Google Scholar-like search, or library APIs for stronger verification."
           },
           {
-            "question": "Do I need advanced technical skills to use ShipAny?",
-            "answer": "While basic programming knowledge is helpful, ShipAny is designed to be developer-friendly. Our templates and documentation make it easy to get started, even if you're not an expert in AI or cloud infrastructure."
+            "question": "Why not build full PDF parsing immediately?",
+            "answer": "The first demo keeps the input to paste or plain text upload so the product value is visible fast. PDF and DOCX parsing are natural follow-up integrations."
           },
           {
-            "question": "What types of AI SaaS can I build with ShipAny?",
-            "answer": "ShipAny supports a wide range of AI applications, from content generation to data analysis tools. Our templates cover popular use cases like AI chatbots, content generators, image processing apps, and more."
+            "question": "What makes this a good Vibe Coding project?",
+            "answer": "It starts from a real pain point, has a small interaction loop, shows PM-style scoping, and can be expanded with AI retrieval after the landing page and UX prove the value."
           },
           {
-            "question": "How long does it typically take to launch with ShipAny?",
-            "answer": "With ShipAny, you can have a working prototype in hours and a production-ready application in hours. Our one-click deployment and pre-configured infrastructure significantly reduce the traditional months-long development cycle."
-          },
-          {
-            "question": "What's included in the ShipAny infrastructure?",
-            "answer": "ShipAny provides a complete infrastructure stack including authentication, database setup, API integration, payment processing, and scalable cloud deployment. Everything is pre-configured following industry best practices."
-          },
-          {
-            "question": "Can I customize the templates to match my brand?",
-            "answer": "Absolutely! All ShipAny templates are fully customizable. You can modify the design, features, and functionality to match your brand identity and specific business requirements while maintaining the robust underlying infrastructure."
+            "question": "Can this become a paid SaaS?",
+            "answer": "Yes. The likely paid layer is batch uploads, institutional accounts, stronger source lookup, exportable reports, and LMS integrations."
           }
         ]
       },
       "cta": {
         "id": "cta",
-        "title": "Ship your first AI SaaS Startup",
-        "description": "Start from here, ship with ShipAny.",
+        "title": "Turn bibliography anxiety into a reviewable checklist",
+        "description": "CiteTrace is intentionally small: one painful workflow, one clear audit, one path toward real AI verification.",
         "buttons": [
           {
-            "title": "Get ShipAny",
-            "url": "https://shipany.ai",
-            "target": "_blank",
-            "icon": "Zap"
+            "title": "Run the demo",
+            "url": "#audit-demo",
+            "target": "_self",
+            "icon": "SearchCheck"
           },
           {
-            "title": "Read Document",
+            "title": "Read docs",
             "url": "/docs",
             "target": "_blank",
             "variant": "outline",
             "icon": "BookOpenText"
           }
         ],
-        "className": "bg-muted"
-      },
-      "subscribe": {
-        "id": "subscribe",
-        "title": "Subscribe to our newsletter",
-        "description": "Get the latest news and updates from ShipAny.",
-        "submit": {
-          "input": {
-            "placeholder": "Enter your email"
-          },
-          "button": {
-            "title": "Subscribe"
-          },
-          "action": "/api/subscribe"
-        },
         "className": "bg-muted"
       }
     }

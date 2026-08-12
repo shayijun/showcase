@@ -2,10 +2,10 @@
   "header": {
     "id": "header",
     "brand": {
-      "title": "ShipAny Two",
+      "title": "CiteTrace",
       "logo": {
         "src": "/logo.png",
-        "alt": "ShipAny Two",
+        "alt": "CiteTrace",
         "width": 100,
         "height": 100
       },
@@ -14,78 +14,34 @@
     "nav": {
       "items": [
         {
+          "title": "Demo",
+          "url": "/#audit-demo",
+          "icon": "SearchCheck"
+        },
+        {
+          "title": "Workflow",
+          "url": "/#workflow",
+          "icon": "GitBranch"
+        },
+        {
           "title": "Features",
           "url": "/#features",
           "icon": "Sparkles"
         },
         {
-          "title": "Showcases",
-          "url": "/showcases",
-          "icon": "Box"
-        },
-        {
-          "title": "Pricing",
-          "url": "/pricing",
-          "icon": "DollarSign"
-        },
-        {
-          "title": "AI",
-          "icon": "RiRobot2Line",
-          "children": [
-            {
-              "title": "AI Image Generator",
-              "description": "Use AI to generate images",
-              "url": "/ai-image-generator",
-              "icon": "RiImage2Line"
-            },
-            {
-              "title": "AI Music Generator",
-              "description": "Use AI to generate music",
-              "url": "/ai-music-generator",
-              "icon": "RiMusic2Line"
-            },
-            {
-              "title": "AI Video Generator",
-              "description": "Use AI to generate videos",
-              "url": "/ai-video-generator",
-              "icon": "RiVideoLine"
-            },
-            {
-              "title": "AI Chatbot",
-              "description": "Chat with AI chatbot",
-              "url": "/chat",
-              "icon": "RiMessage2Line"
-            }
-          ]
-        },
-        {
-          "title": "Content",
-          "icon": "FileText",
-          "children": [
-            {
-              "title": "Blog",
-              "description": "Read Blog Posts",
-              "url": "/blog",
-              "icon": "Newspaper"
-            },
-            {
-              "title": "Updates",
-              "description": "Read Update Logs",
-              "url": "/updates",
-              "icon": "Clock"
-            },
-            {
-              "title": "Docs",
-              "description": "Read Documentation",
-              "url": "/docs",
-              "target": "_blank",
-              "icon": "BookOpenText"
-            }
-          ]
+          "title": "FAQ",
+          "url": "/#faq",
+          "icon": "CircleHelp"
         }
       ]
     },
-    "buttons": [],
+    "buttons": [
+      {
+        "title": "Run demo",
+        "url": "/#audit-demo",
+        "icon": "SearchCheck"
+      }
+    ],
     "user_nav": {
       "show_name": true,
       "show_credits": true,
@@ -107,40 +63,41 @@
     "show_theme": true,
     "show_locale": true,
     "topbanner": {
-      "text": "This website is a demo site for the ShipAny template. To purchase the ShipAny template, please visit the <a href='https://shipany.ai/pricing' class='text-orange-300' target='_blank'>ShipAny website</a>"
+      "text": "CiteTrace is a focused Vibe Coding MVP for academic citation auditing.",
+      "dismissedExpiryDays": 1
     }
   },
   "footer": {
     "id": "footer",
     "brand": {
-      "title": "ShipAny Two",
-      "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups. Ship Fast with a variety of templates and components.",
+      "title": "CiteTrace",
+      "description": "A lightweight academic citation audit MVP that helps students turn bibliography uncertainty into a clear repair queue.",
       "logo": {
         "src": "/logo.png",
-        "alt": "ShipAny Two",
-        "width": 1024,
-        "height": 1024
+        "alt": "CiteTrace",
+        "width": 100,
+        "height": 100
       },
       "url": "/"
     },
     "nav": {
       "items": [
         {
-          "title": "About",
+          "title": "Product",
           "children": [
+            {
+              "title": "Demo",
+              "url": "/#audit-demo",
+              "target": "_self"
+            },
+            {
+              "title": "Workflow",
+              "url": "/#workflow",
+              "target": "_self"
+            },
             {
               "title": "Features",
               "url": "/#features",
-              "target": "_self"
-            },
-            {
-              "title": "Showcases",
-              "url": "/showcases",
-              "target": "_self"
-            },
-            {
-              "title": "Pricing",
-              "url": "/pricing",
               "target": "_self"
             }
           ]
@@ -149,7 +106,7 @@
           "title": "Resources",
           "children": [
             {
-              "title": "Documents",
+              "title": "Docs",
               "url": "/docs",
               "target": "_self"
             },
@@ -166,22 +123,17 @@
           ]
         },
         {
-          "title": "Friends",
+          "title": "Legal",
           "children": [
             {
-              "title": "ShipAny",
-              "url": "https://shipany.ai",
-              "target": "_blank"
+              "title": "Privacy Policy",
+              "url": "/privacy-policy",
+              "target": "_self"
             },
             {
-              "title": "ThinkAny",
-              "url": "https://thinkany.ai",
-              "target": "_blank"
-            },
-            {
-              "title": "MCP.so",
-              "url": "https://mcp.so",
-              "target": "_blank"
+              "title": "Terms of Service",
+              "url": "/terms-of-service",
+              "target": "_self"
             }
           ]
         }
@@ -190,21 +142,9 @@
     "social": {
       "items": [
         {
-          "title": "X",
-          "icon": "RiTwitterXFill",
-          "url": "https://x.com/your-app-name",
-          "target": "_blank"
-        },
-        {
           "title": "Github",
           "icon": "Github",
           "url": "https://github.com/your-app-name",
-          "target": "_blank"
-        },
-        {
-          "title": "Discord",
-          "icon": "RiDiscordFill",
-          "url": "https://discord.gg/your-app-name",
           "target": "_blank"
         },
         {
@@ -228,6 +168,7 @@
       ]
     },
     "show_theme": true,
-    "show_locale": true
+    "show_locale": true,
+    "show_built_with": false
   }
 }

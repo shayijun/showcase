@@ -1,16 +1,63 @@
-# ShipAny Template Two
+# ShipAny Template Two SaaS Product
+
+This repository is the product codebase for a ShipAny Two based SaaS application.
 
 ## Getting Started
 
-read [ShipAny Document](https://shipany.ai/docs/quick-start) to start your AI SaaS project.
+Read the official ShipAny docs before making framework-level changes:
 
-## Buy Templates
+- Chinese docs: https://docs.shipany.ai/zh
+- Quick start: https://docs.shipany.ai/zh/shipany-two/quick-start
 
-check [ShipAny Templates](https://shipany.ai/templates) to buy Business Templates.
+Common local commands:
 
-## Feedback
+```bash
+pnpm install
+pnpm dev
+```
 
-submit your feedbacks on [Github Issues](https://github.com/shipanyai/shipany-template-two/issues)
+## AI Development Rules
+
+AI assistants must read `AGENTS.md` before changing code in this repository.
+
+Every new requirement, bug fix, refactor, or API change must follow test-first development:
+
+1. Write or update the failing test first.
+2. Implement the smallest production change that makes the test pass.
+3. Refactor only while tests stay green.
+4. Run the relevant automated checks and report the commands/results.
+
+Do not mark a change complete if tests were skipped or only assumed to pass.
+
+## Automated Testing
+
+The default quality gate is:
+
+```bash
+pnpm validate
+```
+
+It runs:
+
+- `pnpm typecheck`
+- `pnpm lint`
+- `pnpm test:coverage`
+
+Additional test commands:
+
+- `pnpm test`: run Vitest unit, integration, and component tests.
+- `pnpm test:watch`: run Vitest in watch mode.
+- `pnpm lint:full`: show the inherited template lint warning backlog.
+- `pnpm test:e2e`: run Playwright browser tests.
+- `pnpm test:e2e:ui`: open the Playwright UI runner.
+
+Test structure:
+
+- `tests/unit/**`: unit and focused integration tests.
+- `tests/e2e/**`: Playwright browser flows.
+- `tests/setup/vitest.setup.ts`: shared Vitest setup.
+
+For new API routes, tests should cover authentication, ownership/RBAC, invalid input, success behavior, and rate limiting where applicable. External services such as AI providers, payment, email, storage, and analytics should be mocked in automated tests by default.
 
 ## LICENSE
 
