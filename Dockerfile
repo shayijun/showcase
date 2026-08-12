@@ -10,7 +10,7 @@ WORKDIR /app
 
 # Install dependencies without project postinstall scripts. The docs source is
 # generated after the full source tree is copied into the builder stage.
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN pnpm install --frozen-lockfile --ignore-scripts
 
 # Rebuild the source code only when needed
